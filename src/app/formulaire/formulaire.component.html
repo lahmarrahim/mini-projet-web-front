@@ -1,0 +1,12 @@
+<div class="login-page">
+    <div class="form">
+      <form #monForm="ngForm" class="login-form">
+        <input type="text" placeholder="username" #username="ngModel" ngModel required minlength="5"/>
+        <div *ngIf="username.errors && username.touched">
+            <div style="color:red" *ngIf="username.errors['required']">Ce champ est obligatoire</div>
+            <div style="color:red" *ngIf="username.errors['minlength']">Ce champ est court</div>
+        </div>
+        <button>S’authetifier</button>
+      </form>
+    </div>
+</div>

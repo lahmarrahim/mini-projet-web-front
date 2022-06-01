@@ -1,0 +1,26 @@
+<br>
+<div style="display: flex ; justify-content: space-between;">
+  <h1 style="color: white; text-align: center ; margin-left: 20px;"> Nos Produits </h1>
+  <a style="color: white; margin-right: 20px;" routerLink="/ajouterProduit">Ajouter un produit</a>
+</div>
+
+<br>
+<div class="card-group">
+  <div class="row">
+    <div *ngFor="let produit of list" class="col-md-3 col-sm-1">
+      <div>
+        <div  class="card" style="margin: 10px;">
+          <img class="card-img-top" src="{{produit.images[0]}}" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">{{produit.nom}}</h5>
+            <p class="card-text">{{produit.description}}</p>
+            <p class="card-text"> quantité : {{produit.quantite}}</p>
+            <p class="card-text"> prix : {{produit.prix}} Da</p>
+            <button type="button" class="btn btn-success" (click)="navigateProduct(produit.id)" style="margin-right: 5px ;"><i class="fas fa-edit"></i></button>
+            <button type="button" class="btn btn-danger" (click)="deleteProduct(produit.id)" ><i class="far fa-trash-alt"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

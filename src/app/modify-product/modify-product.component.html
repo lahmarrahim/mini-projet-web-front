@@ -1,0 +1,72 @@
+<section class="page-section" id="product">
+    <div class="container">
+        <div class="text-center">
+            <h2 class="section-heading text-uppercase">Modifier un Produit</h2>
+        </div>
+        <br><br>
+        <form id="productForm" data-sb-form-api-token="API_TOKEN">
+            <div class="row align-items-stretch mb-5">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <input class="form-control" id="name" type="text" [(ngModel)]="nom" name="nom" placeholder="Nom" data-sb-validations="required" />
+                        <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" id="prix" type="text" [(ngModel)]="prix" name="prix" placeholder="Prix" data-sb-validations="required" />
+                        <div class="invalid-feedback" data-sb-feedback="prix:required">A prix is required.</div>
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" id="quantite" type="text" [(ngModel)]="quantite" name="quantite" placeholder="Quantité" data-sb-validations="required" />
+                        <div class="invalid-feedback" data-sb-feedback="quantite:required">A quantite is required.</div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group form-group-textarea mb-md-0">
+                        <textarea class="form-control" id="message" placeholder="Description" name="description" [(ngModel)]="description" data-sb-validations="required"></textarea>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="text-center"><button class="btn btn-primary btn-xl text-uppercase" id="submitButton" (click)="onClick();">Modifier le produit</button></div>
+        </form>
+    </div>
+</section>
+
+
+<!-- 
+<form #f="ngForm" id="productForm">
+    <div class="row align-items-stretch mb-5">
+        <div class="col-md-6">
+            <div class="form-group">
+                <input class="form-control" id="name" type="text" name="nom" #nom="ngModel" [(ngModel)]="nom" required placeholder="Nom" />
+                <div *ngIf="nom.errors && f.touched">
+                    <div class="invalid-feedback" *ngIf="nom.errors['required']">Ce champ est obligatoire</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <input class="form-control" id="prix" type="text" name="prix" #prix="ngModel" [(ngModel)]="prix" required placeholder="Prix" />
+                <div *ngIf="prix.errors">
+                    <div class="invalid-feedback" *ngIf="prix.errors['required']">Ce champ est obligatoire</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <input class="form-control" id="quantite" type="text" name="quantite" #quantite="ngModel" [(ngModel)]="quantite" required placeholder="Quantité" />
+                <div *ngIf="quantite.errors">
+                    <div class="invalid-feedback" *ngIf="quantite.errors['required']">Ce champ est obligatoire</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <input class="form-control" id="images" type="file" (change)="onChange($event)" />
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group form-group-textarea mb-md-0">
+                <textarea class="form-control" id="message" placeholder="Description" name="description" #description="ngModel" [(ngModel)]="description" required></textarea>   
+            </div>
+            <div *ngIf="description.errors">
+                <div class="invalid-feedback" *ngIf="description.errors['required']">Ce champ est obligatoire</div>
+            </div>
+        </div>
+    </div>
+    <div class="text-center"><button class="btn btn-primary btn-xl text-uppercase" id="submitButton" (click)="onClick();">Ajouter le produit</button></div>
+</form> -->
